@@ -1,5 +1,3 @@
-import java.util.Arrays;
-
 public class RenderEngine{
     public static void Frame(String[][] stage, int[] spritex, int[] spritey, String[][][] sprites){
         String[][] frame = stage;
