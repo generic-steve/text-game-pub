@@ -1,6 +1,5 @@
 package Main;
-
-import javax.swing.JLabel;
+import java.awt.*;
 
 public class Constants{
     public static final String[][] TestStage =
@@ -29,4 +28,5 @@ public class Constants{
     {"=", "=", "="},
     {"=", "=", "="}}};
     public static final int[] TestNumList = {5};
+    public static final Font TestFont = new Font("Monospaced", Font.PLAIN, 36);
 }
