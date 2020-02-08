@@ -17,7 +17,6 @@ public class GameFrame extends JFrame {
         for(int x = 0; x < 40; x++) {
             for(int y = 0; y < 40; y++){
                 MainPanel.add(PixelList[x-1][y-1]);
-
             }
         }
 
