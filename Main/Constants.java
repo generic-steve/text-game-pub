@@ -28,6 +28,5 @@ public class Constants{
   {{{"=", "=", "="},
     {"=", "=", "="},
     {"=", "=", "="}}};
-    public static JLabel[][] Pixels = new JLabel[40][20];
     public static final int[] TestNumList = {5};
 }
