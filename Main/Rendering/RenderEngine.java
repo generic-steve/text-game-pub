@@ -13,13 +13,13 @@ public class RenderEngine {
             }
         }
     }
-    //TODO fix error when subarrays are different lengths, and when x or y are outside of stage boundaries
+    //TODO fix error when subarrays are different lengths, or just don't do that.
     public static String[][] spriteAdd(int spritex, int spritey, String[][] sprite, String[][] frame) {
         final int spritePhysicalX = sprite.length;
         final int spritePhysicalY = sprite[1].length;
-        if (spritePhysicalY + sprite[1].length > frame[1].length || spritePhysicalX + sprite.length > frame.length){
-            return frame;
-        }
+            if (spritePhysicalY + spritey > frame[1].length || spritePhysicalX + spritex > frame.length){
+                return frame;
+            }
         for (int x = 0; (x) < spritePhysicalX; x++){
             for (int y = 0; (y) < spritePhysicalY; y++) {
                 frame[spritePhysicalX + x][spritePhysicalY + y] = sprite[x][y];
