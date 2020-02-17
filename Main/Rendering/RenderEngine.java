@@ -13,7 +13,7 @@ public class RenderEngine {
             }
         }
     }
-    //TODO fix error when subarrays are different lengths, or just don't do that.
+    //TODO fix error when subarrays are different lengths, or just don't do that. note: many other classes also crash when this happens
     public static String[][] spriteAdd(int spritex, int spritey, String[][] sprite, String[][] frame) {
         final int spritePhysicalX = sprite.length;
         final int spritePhysicalY = sprite[1].length;
