@@ -1,3 +1,5 @@
+package Main.Rendering;
+
 import javax.swing.*;
 
 import Main.Constants;
