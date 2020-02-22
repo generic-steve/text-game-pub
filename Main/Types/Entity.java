@@ -11,7 +11,8 @@ public class Entity {
         posY = startY;
         sizeX = sprite.length;
         sizeY = sprite[1].length;
-        currentSprite = sprite;
+        sprites = new String[][][] {sprite};
+        currentSprite = sprites[0];
     }
     public Entity(int startX, int startY, String[][][] sprites){//TODO make this not crash with differently sized matrices, or just don't do that.
         posX = startX;
@@ -21,13 +22,17 @@ public class Entity {
         sprites = this.sprites;
         currentSprite = this.sprites[1];
     }
-    public int ChangeY(int Amount){
+    public void ChangeY(int Amount){
         posY += Amount;
-        return posY;
     }
-    public int ChangeX(int Amount){
+    public void ChangeX(int Amount){
         posX += Amount;
-        return posX;
+    }
+    public void SetY(int Y){
+        posY = Y;
+    }
+    public void SetX(int X){
+        posX = X;
     }
     public int GetX(){
         return posX;
