@@ -7,18 +7,18 @@ public class Entity {
     private String[][][] sprites;
     private String[][] currentSprite;
     public Entity(int startX, int startY, String[][] sprite){
-        sizeX = startX;
+        posX = startX;
         posY = startY;
         sizeX = sprite.length;
-        sizeY = sprite[1].length;
+        sizeY = sprite[0].length;
         sprites = new String[][][] {sprite};
         currentSprite = sprites[0];
     }
     public Entity(int startX, int startY, String[][][] sprites){//TODO make this not crash with differently sized matrices, or just don't do that.
         posX = startX;
         posY = startY;
-        sizeX = this.sprites[1].length;
-        sizeY = this.sprites[1][1].length;
+        sizeX = this.sprites[0].length;
+        sizeY = this.sprites[0][0].length;
         sprites = this.sprites;
         currentSprite = this.sprites[1];
     }
