@@ -1,13 +1,15 @@
 package Main.Rendering;
 
+import Main.Types.Entity;
+
 public class RenderEngine {
     public static void init(){
         GameFrame.NewFrame();
     }
-    public static void Frame (String[][] stage, int[] spritex, int[] spritey, String[][][] sprites){
+    public static void Frame (String[][] stage, Entity[] spriteList){
         String[][] frame = stage;
-        for(int i = 0; (i) < (sprites.length); i++) {
-            frame = spriteAdd(spritex[i], spritey[i], sprites[i], frame);
+        for(int i = 0; (i) < (spriteList.length); i++) {
+            frame = spriteAdd(spriteList[i].GetX(), spriteList[i].GetY(), spriteList[i].GetSprite(), frame);
         }
         for(int i = 0; (i) < (frame.length); i++){
             for(int j = 0; (j) < frame[1].length; j++){

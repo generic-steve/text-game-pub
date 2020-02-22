@@ -11,7 +11,6 @@ public class Entity {
         posY = startY;
         sizeX = sprite.length;
         sizeY = sprite[1].length;
-        sprites[1] = sprite;
         currentSprite = sprite;
     }
     public Entity(int startX, int startY, String[][][] sprites){//TODO make this not crash with differently sized matrices, or just don't do that.
@@ -45,7 +44,7 @@ public class Entity {
     public String[][] GetSprite(){
         return currentSprite;
     }
-    public String[][] SetSprite(int index){
+    public String[][] SetSprite(int index){//TODO this currently returns an error if run on a single-sprite entity, or the index is outside of the range
         currentSprite = sprites[index];
         return currentSprite;
     }
