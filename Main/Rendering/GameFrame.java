@@ -2,7 +2,6 @@ package Main.Rendering;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.*;
 
 import Main.Constants;
 
@@ -10,20 +9,27 @@ public class GameFrame extends JFrame {
     public static int entityPosX = 1;
     public static int entityPosY = 5;
     private static final long serialVersionUID = 1L;
-    public static JLabel[][] PixelMatrix = new JLabel[20][40];// TODO make this dynamic, maybe? also, this has a default value of space
+    public static JLabel[][] PixelMatrixA = new JLabel[20][40];// TODO make this dynamic, maybe? also, this has a default value of space
+    public static JLabel[][] PixelMatrixB = new JLabel[20][40];
+    static JPanel PanelA = new JPanel();
+    static JPanel PanelB = new JPanel();
+
     public static final GameFrame NewFrame() {
         GameFrame Frame1 = new GameFrame();
-        JPanel MainPanel = new JPanel();
-        MainPanel.setLayout(new GridLayout(20, 40, 0, 0));
+        PanelA.setLayout(new GridLayout(20, 40, 0, 0));
+        PanelB.setLayout(new GridLayout(20, 40, 0, 0));
         for (int x = 0; x < 20; x++) {
             for (int y = 0; y < 40; y++) {
-                PixelMatrix[x][y] = new JLabel(" ");
+                PixelMatrixB[x][y] = new JLabel(" ");
+                PanelB.add(PixelMatrixB[x][y]);
+                PixelMatrixB[x][y].setFont(Constants.TestFont);
             }
         }
         for (int x = 0; x < 20; x++) {
             for (int y = 0; y < 40; y++) {
-                MainPanel.add(PixelMatrix[x][y]);
-                PixelMatrix[x][y].setFont(Constants.TestFont);
+                PixelMatrixA[x][y] = new JLabel(" ");
+                PanelA.add(PixelMatrixA[x][y]);
+                PixelMatrixA[x][y].setFont(Constants.TestFont);
             }
         }
         MainPanel.setVisible(true);
@@ -64,6 +70,9 @@ public class GameFrame extends JFrame {
 
         });
 
+        PanelA.setVisible(true);
+        PanelB.setVisible(true);
+        Frame1.add(PanelA);
         return Frame1;
     }
     public GameFrame() {
