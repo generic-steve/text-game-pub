@@ -12,5 +12,7 @@ public class Main {
             RenderEngine.Frame(Constants.TestStage, EntList1, MainFrame);//TODO when adding multiple frames, remember to call BufferFlip in RenderEngine
         //To gus: updte entlist using keypresses here.
         }
+      
     }
+    
 }
