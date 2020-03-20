@@ -8,6 +8,7 @@ public class RenderEngine {
         return GameFrame.NewFrame();
     }
     public static void Frame (String[][] stage, Entity[] entList, GameFrame Frame1){
+        Frame1.ResetBuffer();
         DoubleBufferFlipFlop = !DoubleBufferFlipFlop;
         String[][] frame = stage;
         for(int i = 0; (i) < (entList.length); i++) {
@@ -42,15 +43,13 @@ public class RenderEngine {
     }
 
     public static void BufferFlip(boolean FlipState, GameFrame Frame1) {
-        for (int x = 0; x < 20; x++) {
-            for (int y = 0; y < 40; y++) {
-                if(FlipState){
-                    Frame1.add(GameFrame.PanelB);
-                } else {
-                    Frame1.add(GameFrame.PanelA);
-                }
-            }
+        Frame1.remove(GameFrame.PanelA);
+        if(FlipState){
+            Frame1.remove(GameFrame.PanelA);
+            Frame1.add(GameFrame.PanelB);
+        }else{
+            Frame1.remove(GameFrame.PanelB);
+            Frame1.add(GameFrame.PanelA);
         }
     }
-
 }

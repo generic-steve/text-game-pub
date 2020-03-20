@@ -9,14 +9,10 @@ public class Main {
         Entity[] EntList1 = {Ent1};
         GameFrame MainFrame = RenderEngine.init();
         while(true){
-            int keyx = GameFrame.KeyX;
-            int keyy = GameFrame.KeyY;
-            Ent1.ChangeX(1);
-            Ent1.ChangeY(1); 
             RenderEngine.Frame(Constants.TestStage, EntList1, MainFrame);//TODO when adding multiple frames, remember to call BufferFlip in RenderEngine
-            //To gus: updte entlist using keypresses here.
-            Ent1.ChangeX(keyx);
-            Ent1.ChangeY(keyy); 
+            Ent1.ChangeX(MainFrame.GetKey()[0]);
+            Ent1.ChangeY(MainFrame.GetKey()[1]);
+            System.out.println(MainFrame.GetKey().toString());
         }
       
     }

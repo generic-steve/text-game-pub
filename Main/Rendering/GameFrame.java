@@ -48,6 +48,8 @@ public class GameFrame extends JFrame {
             @Override
             public void keyPressed(KeyEvent e) {
                 int keyCode = e.getKeyCode();
+                KeyY = 0;
+                KeyX = 0;
                 switch (keyCode) {
                     case KeyEvent.VK_UP:
                         keyPressedString = "Up";
@@ -65,11 +67,6 @@ public class GameFrame extends JFrame {
                         keyPressedString = "Right";
                         KeyX = -1;
                         break;
-                    default:
-                        keyPressedString = null;
-                        KeyY = 0;
-                        KeyX = 0;
-                    
                 }
 
             }
@@ -94,7 +91,19 @@ public class GameFrame extends JFrame {
         this.setVisible(true);
         this.setResizable(false);
     }
-    public String GetKey() {
-        return keyPressedString;
+    public int[] GetKey() {
+        return new int[] {KeyX,KeyY};
+    }
+    public void ResetBuffer(){
+        for (int x = 0; x < 20; x++) {
+            for (int y = 0; y < 40; y++) {
+                PixelMatrixB[x][y].setText(" ");
+            }
+        }
+        for (int x = 0; x < 20; x++) {
+            for (int y = 0; y < 40; y++) {
+                PixelMatrixA[x][y].setText(" ");;
+            }
+        }
     }
 }
