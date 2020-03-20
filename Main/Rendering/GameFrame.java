@@ -2,6 +2,7 @@ package Main.Rendering;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.*;
 
 import Main.Constants;
 
@@ -13,6 +14,7 @@ public class GameFrame extends JFrame {
     public static JLabel[][] PixelMatrixB = new JLabel[20][40];
     static JPanel PanelA = new JPanel();
     static JPanel PanelB = new JPanel();
+    static String keyPressedString = null;
 
     public static final GameFrame NewFrame() {
         GameFrame Frame1 = new GameFrame();
@@ -32,8 +34,6 @@ public class GameFrame extends JFrame {
                 PixelMatrixA[x][y].setFont(Constants.TestFont);
             }
         }
-        MainPanel.setVisible(true);
-        Frame1.add(MainPanel);
         Frame1.addKeyListener(new KeyListener() {
 
             @Override
@@ -45,19 +45,22 @@ public class GameFrame extends JFrame {
             @Override
             public void keyPressed(KeyEvent e) {
                 int keyCode = e.getKeyCode();
-                switch(keyCode) {
+                switch (keyCode) {
                     case KeyEvent.VK_UP:
-                        entityPosY = entityPosY-- ;
+                        keyPressedString = "Up";
                         break;
                     case KeyEvent.VK_DOWN:
-                        entityPosY = entityPosY++ ;
+                        keyPressedString = "Down";
                         break;
                     case KeyEvent.VK_LEFT:
-                        entityPosX = entityPosX-- ;
+                        keyPressedString = "Left";
                         break;
                     case KeyEvent.VK_RIGHT:
-                        entityPosX = entityPosX++ ;
+                        keyPressedString = "Right";
                         break;
+                    default:
+                        keyPressedString = null;
+                    
                 }
 
             }
@@ -81,5 +84,8 @@ public class GameFrame extends JFrame {
         this.setTitle("The Game");
         this.setVisible(true);
         this.setResizable(false);
+    }
+    public String GetKey() {
+        return keyPressedString;
     }
 }
