@@ -3,6 +3,7 @@ package Main.Rendering;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+//import Main.Types.Entity;
 
 import Main.Constants;
 
@@ -15,6 +16,8 @@ public class GameFrame extends JFrame {
     static JPanel PanelA = new JPanel();
     static JPanel PanelB = new JPanel();
     static String keyPressedString = null;
+    public static int KeyX = 0;
+    public static int KeyY = 0;
 
     public static final GameFrame NewFrame() {
         GameFrame Frame1 = new GameFrame();
@@ -48,18 +51,24 @@ public class GameFrame extends JFrame {
                 switch (keyCode) {
                     case KeyEvent.VK_UP:
                         keyPressedString = "Up";
+                        KeyY = 1;
                         break;
                     case KeyEvent.VK_DOWN:
                         keyPressedString = "Down";
+                        KeyY = 2;
                         break;
                     case KeyEvent.VK_LEFT:
                         keyPressedString = "Left";
+                        KeyX = 1;
                         break;
                     case KeyEvent.VK_RIGHT:
                         keyPressedString = "Right";
+                        KeyX = 2;
                         break;
                     default:
                         keyPressedString = null;
+                        KeyY = 0;
+                        KeyX = 0;
                     
                 }
 
