@@ -55,7 +55,7 @@ public class GameFrame extends JFrame {
                         break;
                     case KeyEvent.VK_DOWN:
                         keyPressedString = "Down";
-                        KeyY = 2;
+                        KeyY = -1;
                         break;
                     case KeyEvent.VK_LEFT:
                         keyPressedString = "Left";
@@ -63,7 +63,7 @@ public class GameFrame extends JFrame {
                         break;
                     case KeyEvent.VK_RIGHT:
                         keyPressedString = "Right";
-                        KeyX = 2;
+                        KeyX = -1;
                         break;
                     default:
                         keyPressedString = null;

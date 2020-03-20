@@ -11,19 +11,12 @@ public class Main {
         while(true){
             int keyx = GameFrame.KeyX;
             int keyy = GameFrame.KeyY;
+            Ent1.ChangeX(1);
+            Ent1.ChangeY(1); 
             RenderEngine.Frame(Constants.TestStage, EntList1, MainFrame);//TODO when adding multiple frames, remember to call BufferFlip in RenderEngine
             //To gus: updte entlist using keypresses here.
-            if (keyx == 1){
-                Ent1.ChangeX(-1);
-            }else if (keyx == 2) {
-                Ent1.ChangeX(1);
-            }else if (keyy == 1) {
-                Ent1.ChangeY(-1);
-            }else if (keyy == 2) {
-                Ent1.ChangeY(1); 
-            }else {
-            
-            }
+            Ent1.ChangeX(keyx);
+            Ent1.ChangeY(keyy); 
         }
       
     }
