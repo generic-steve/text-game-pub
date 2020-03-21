@@ -52,20 +52,16 @@ public class GameFrame extends JFrame {
                 KeyX = 0;
                 switch (keyCode) {
                     case KeyEvent.VK_UP:
-                        keyPressedString = "Up";
                         KeyY = 1;
                         break;
                     case KeyEvent.VK_DOWN:
-                        keyPressedString = "Down";
                         KeyY = -1;
                         break;
                     case KeyEvent.VK_LEFT:
-                        keyPressedString = "Left";
-                        KeyX = 1;
+                        KeyX = -1;
                         break;
                     case KeyEvent.VK_RIGHT:
-                        keyPressedString = "Right";
-                        KeyX = -1;
+                        KeyX = 1;
                         break;
                 }
 

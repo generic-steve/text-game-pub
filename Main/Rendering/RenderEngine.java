@@ -43,7 +43,6 @@ public class RenderEngine {
     }
 
     public static void BufferFlip(boolean FlipState, GameFrame Frame1) {
-        Frame1.remove(GameFrame.PanelA);
         if(FlipState){
             Frame1.remove(GameFrame.PanelA);
             Frame1.add(GameFrame.PanelB);

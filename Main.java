@@ -12,7 +12,11 @@ public class Main {
             RenderEngine.Frame(Constants.TestStage, EntList1, MainFrame);//TODO when adding multiple frames, remember to call BufferFlip in RenderEngine
             Ent1.ChangeX(MainFrame.GetKey()[0]);
             Ent1.ChangeY(MainFrame.GetKey()[1]);
-            System.out.println(MainFrame.GetKey().toString());
+            try {
+                Thread.sleep(300);
+            } catch(InterruptedException ex) {
+                Thread.currentThread().interrupt();
+            }
         }
       
     }
